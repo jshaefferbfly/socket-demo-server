@@ -18,6 +18,7 @@ io.on("connection", (socket) => {
   numOnline += 1;
   io.emit("clientCountUpdate", numOnline);
   socket.on("disconnect", () => {
+    messages = [];
     numOnline -= 1;
     io.emit("clientCountUpdate", numOnline);
   });
